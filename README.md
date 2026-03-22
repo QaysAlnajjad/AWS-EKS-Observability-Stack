@@ -6,35 +6,25 @@ This repository represents an earlier implementation of an observability stack o
 
 ---
 
-## 📌 Deprecation Summary
+## 📌 Repository Status
 
-This project was originally built to deploy:
-
-- Prometheus
-- Alertmanager
-- Grafana
-- Application monitoring and alerting
-
-directly on an EKS cluster using a more traditional approach (Helm / manual configuration).
-
----
-
-## ❗ Status
-
-Deprecated — not recommended for use
+Deprecated — not recommended for use.
 
 This repository is kept for historical and learning purposes only.
 
 ---
 
-## 🚀 New & Recommended Architecture
-
-This project has been replaced with a modern GitOps-based design:
-
-### Use these repositories instead:
+## ✅ Use These Repositories Instead
 
 - **Infrastructure:** https://github.com/QaysAlnajjad/eks-infrastructure
 - **GitOps Applications:** https://github.com/QaysAlnajjad/eks-gitops-apps
+
+These repositories contain the current and recommended implementation based on:
+
+- Terraform
+- ArgoCD
+- GitOps
+- separated infrastructure and application layers
 
 ---
 
@@ -53,7 +43,7 @@ The original approach had several limitations:
 ## ✅ Improvements in the New Approach
 
 | Area | Old Approach (This Repo) | New Approach |
-|------|------------------------|-------------|
+|------|--------------------------|--------------|
 | Deployment | Manual / Helm-driven | ArgoCD (GitOps) |
 | Structure | Monolithic | Separated (infra / apps) |
 | Source of Truth | Mixed | Git (declarative) |
@@ -63,48 +53,12 @@ The original approach had several limitations:
 
 ---
 
-## 🧠 What This Repository Demonstrates
+## 📚 Legacy Documentation
 
-This repository still reflects:
+The content below is the original implementation and is kept for reference only.  
+It does **not** represent the current recommended architecture.
 
-- Initial design of monitoring systems on Kubernetes
-- Understanding of Prometheus and Alertmanager setup
-- Early-stage architecture decisions
-
-It serves as a baseline that highlights the evolution toward a more production-ready system.
-
----
-
-## 📚 Learning Value
-
-Keeping this repository public helps illustrate:
-
-- Architectural evolution
-- Trade-offs between traditional and GitOps approaches
-- Practical progression toward better system design
-
----
-
-## 👤 Author
-
-Maintained by Qays Alnajjad
-
----
-
-## 📌 Final Note
-
-If you're reviewing this project:
-
-👉 Reviewers are encouraged to evaluate the newer repositories first.
-
-This repository is intentionally preserved to show the transition from a basic setup to a **scalable, production-ready GitOps architecture**
-
----
-
-# 📚 Legacy Documentation
-
-The content below is the original implementation and is kept for reference only.
-It does NOT represent the current recommended architecture.
+Reviewers are encouraged to evaluate the newer repositories first.
 
 ## Overview
 
