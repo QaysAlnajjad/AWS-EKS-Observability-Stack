@@ -6,7 +6,7 @@ This repository represents an earlier implementation of an observability stack o
 
 ---
 
-## 📌 Overview
+## 📌 Deprecation Summary
 
 This project was originally built to deploy:
 
@@ -31,21 +31,10 @@ This repository is kept for historical and learning purposes only.
 
 This project has been replaced with a modern GitOps-based design:
 
-### 🔧 Infrastructure
-👉 https://github.com/QaysAlnajjad/eks-infrastructure
+### Use these repositories instead:
 
-- Terraform-based AWS provisioning
-- EKS cluster setup
-- ArgoCD bootstrap
-
-### ⚙️ Applications & Monitoring
-👉 https://github.com/QaysAlnajjad/eks-gitops-apps
-
-- ArgoCD-managed applications
-- Prometheus & Alertmanager via Helm
-- Custom monitoring resources
-- Telegram alert integration
-- Full GitOps workflow
+- **Infrastructure:** https://github.com/QaysAlnajjad/eks-infrastructure
+- **GitOps Applications:** https://github.com/QaysAlnajjad/eks-gitops-apps
 
 ---
 
