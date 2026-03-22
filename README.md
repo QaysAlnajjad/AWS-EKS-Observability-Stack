@@ -15,6 +15,17 @@ It is no longer maintained and has been replaced by a GitOps-based architecture 
 
 ---
 
+## Evolution
+
+| Aspect | Old Repo | New Repos |
+|------|--------|---------|
+| Deployment | Manual / Helm | ArgoCD GitOps |
+| Structure | Monolithic | Separated (infra / apps) |
+| Scalability | Limited | High |
+| Maintainability | Low | High |
+
+---
+
 ## Why the new approach is better
 
 - Clear separation between infrastructure and applications
