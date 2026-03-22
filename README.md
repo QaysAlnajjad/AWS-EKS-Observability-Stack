@@ -1,3 +1,131 @@
+
+
+
+
+CASE STUDY 3: KUBERNETES OBSERVABILITY & ALERTING (GITOPS ARCHITECTURE)
+
+Technologies:  
+EKS, Prometheus Operator, Alertmanager, Grafana, ArgoCD, Helm, Kubernetes RBAC, Terraform, GitHub Actions (OIDC)
+
+---
+
+Overview
+
+Operating Kubernetes workloads reliably requires more than metrics collection; it requires a system that is declarative, reproducible, and safe to evolve.
+
+This project demonstrates a production-aligned observability and alerting architecture built using a GitOps model. The system is designed around clear separation of concerns, where infrastructure provisioning, application deployment, and monitoring configuration are managed independently.
+
+The monitoring stack focuses on latency SLOs using histogram-based metrics and percentile alerting (P95), ensuring that alerts reflect real user experience rather than averages.
+
+---
+
+Architecture Highlights
+
+• GitOps-driven deployment using ArgoCD as the reconciliation engine  
+• Separation of platform layers:
+  ◦ Infrastructure (Terraform-based EKS provisioning)  
+  ◦ Applications (Kubernetes workloads managed via ArgoCD)  
+  ◦ Monitoring (Prometheus stack + custom alerting resources)  
+
+• Monitoring stack deployed via kube-prometheus-stack (Helm)  
+• Additional monitoring resources (ServiceMonitor, PrometheusRule, AlertmanagerConfig) managed declaratively  
+• Alert delivery pipeline integrated with Telegram via a webhook service  
+• Secure CI/CD using GitHub Actions with AWS OIDC (no static credentials)  
+• Strict RBAC boundaries between infrastructure, application, and monitoring responsibilities  
+
+---
+
+GitOps Implementation
+
+The project evolved from a monolithic deployment model into a multi-repository GitOps architecture:
+
+• Infrastructure repository:
+  - Provisions VPC, EKS, IAM, and bootstrap components
+  - Installs ArgoCD and initializes cluster state
+
+• GitOps applications repository:
+  - Defines all in-cluster applications via ArgoCD
+  - Deploys:
+    ◦ AWS Load Balancer Controller  
+    ◦ Sample application  
+    ◦ Flask application  
+    ◦ Monitoring stack (Helm-based)  
+    ◦ Monitoring resources (alerts, dashboards, ServiceMonitors)  
+    ◦ Telegram alert webhook  
+
+This separation ensures that infrastructure changes and application changes are independently managed and versioned.
+
+---
+
+Monitoring & Alerting Design
+
+• Application instrumented with Prometheus Histograms for request latency  
+• Dedicated metrics service used exclusively for Prometheus scraping  
+• Percentile-based alerting using P95 latency (histogram_quantile)  
+• Alertmanager used for routing and grouping alerts  
+• Alert delivery via webhook to a custom Telegram integration service  
+
+Alert flow:
+
+Application → ServiceMonitor → Prometheus → PrometheusRule → Alertmanager → Webhook → Telegram
+
+---
+
+Key Engineering Decisions
+
+• Adopted GitOps (ArgoCD) to enforce a declarative, version-controlled cluster state  
+• Split infrastructure and application layers into separate repositories to improve maintainability and team scalability  
+• Avoided average-based latency metrics in favor of histogram-based percentile alerting  
+• Separated Helm-based platform installation from monitoring resource configuration to maintain clean layering  
+• Designed alert routing to avoid implicit assumptions (e.g., namespace-based matching issues in AlertmanagerConfig)  
+• Integrated external alert delivery (Telegram) to validate end-to-end alert pipelines  
+• Preserved least-privilege IAM boundaries by separating CI roles for infrastructure, application, and monitoring  
+
+---
+
+Hands-on Kubernetes Work
+
+• Designed and deployed Kubernetes Deployments, Services, and Ingress resources  
+• Implemented readiness and liveness probes to control traffic flow and pod lifecycle  
+• Defined CPU and memory requests/limits for predictable scheduling  
+• Created ServiceMonitors for dynamic Prometheus service discovery  
+• Managed AlertmanagerConfig and PrometheusRule CRDs  
+• Debugged real-world issues including:
+  ◦ failing probes  
+  ◦ misconfigured ServiceMonitors  
+  ◦ Alertmanager routing mismatches  
+  ◦ container startup errors and image issues  
+
+• Verified service discovery via Endpoints / EndpointSlices  
+• Operated workloads locally using Minikube and on EKS  
+
+---
+
+Outcome
+
+Delivered a production-style observability platform with:
+
+• Fully declarative deployment model (GitOps)  
+• Clear separation between infrastructure and application layers  
+• End-to-end alert pipeline validated from application metrics to external notification  
+• Improved maintainability and scalability compared to the initial monolithic design  
+
+---
+
+Repository References
+
+Infrastructure:
+https://github.com/QaysAlnajjad/eks-infrastructure
+
+GitOps Applications:
+https://github.com/QaysAlnajjad/eks-gitops-apps
+
+Legacy implementation (pre-GitOps):
+https://github.com/QaysAlnajjad/aws-eks-observability-stack
+
+
+
+
 # ⚠️ AWS EKS Observability Stack (Deprecated)
 
 This repository represents an earlier implementation of an observability stack on AWS EKS.
