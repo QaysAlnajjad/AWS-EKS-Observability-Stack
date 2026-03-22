@@ -1,4 +1,3 @@
-}
 # ⚠️ AWS EKS Observability Stack (Deprecated)
 
 This repository represents an earlier implementation of an observability stack on AWS EKS.
@@ -113,41 +112,6 @@ This repository is intentionally preserved to show the transition from a basic s
 
 
 # Kubernetes Monitoring with Prometheus & Alertmanager
-
-# ⚠️ Deprecated Repository
-
-This repository represents an earlier approach to building an observability stack on EKS.
-
-It is no longer maintained and has been replaced by a GitOps-based architecture using:
-
-- ArgoCD
-- Separation of concerns (infrastructure vs applications)
-
-👉 New approach:
-- https://github.com/QaysAlnajjad/eks-infrastructure
-- https://github.com/QaysAlnajjad/eks-gitops-apps
-
----
-
-## Evolution
-
-| Aspect | Old Repo | New Repos |
-|------|--------|---------|
-| Deployment | Manual / Helm | ArgoCD GitOps |
-| Structure | Monolithic | Separated (infra / apps) |
-| Scalability | Limited | High |
-| Maintainability | Low | High |
-
----
-
-## Why the new approach is better
-
-- Clear separation between infrastructure and applications
-- Fully declarative GitOps workflow
-- Better scalability and maintainability
-- Easier team collaboration
-
----
 
 ## Overview
 
