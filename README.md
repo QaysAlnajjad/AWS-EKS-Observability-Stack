@@ -1,3 +1,120 @@
+}
+# ⚠️ AWS EKS Observability Stack (Deprecated)
+
+This repository represents an earlier implementation of an observability stack on AWS EKS.
+
+> 🚨 This project is no longer maintained and has been superseded by a GitOps-based architecture.
+
+---
+
+## 📌 Overview
+
+This project was originally built to deploy:
+
+- Prometheus
+- Alertmanager
+- Grafana
+- Application monitoring and alerting
+
+directly on an EKS cluster using a more traditional approach (Helm / manual configuration).
+
+---
+
+## ❗ Status
+
+Deprecated — not recommended for use
+
+This repository is kept for historical and learning purposes only.
+
+---
+
+## 🚀 New & Recommended Architecture
+
+This project has been replaced with a modern GitOps-based design:
+
+### 🔧 Infrastructure
+👉 https://github.com/QaysAlnajjad/eks-infrastructure
+
+- Terraform-based AWS provisioning
+- EKS cluster setup
+- ArgoCD bootstrap
+
+### ⚙️ Applications & Monitoring
+👉 https://github.com/QaysAlnajjad/eks-gitops-apps
+
+- ArgoCD-managed applications
+- Prometheus & Alertmanager via Helm
+- Custom monitoring resources
+- Telegram alert integration
+- Full GitOps workflow
+
+---
+
+## 🔄 Why This Repo Was Replaced
+
+The original approach had several limitations:
+
+- Tight coupling between infrastructure and applications
+- Manual or semi-manual deployments
+- No clear separation of concerns
+- Limited scalability for teams
+- Harder to maintain over time
+
+---
+
+## ✅ Improvements in the New Approach
+
+| Area | Old Approach (This Repo) | New Approach |
+|------|------------------------|-------------|
+| Deployment | Manual / Helm-driven | ArgoCD (GitOps) |
+| Structure | Monolithic | Separated (infra / apps) |
+| Source of Truth | Mixed | Git (declarative) |
+| Scalability | Limited | High |
+| Maintainability | Low | High |
+| Team Collaboration | Difficult | Easy |
+
+---
+
+## 🧠 What This Repository Demonstrates
+
+This repository still reflects:
+
+- Initial design of monitoring systems on Kubernetes
+- Understanding of Prometheus and Alertmanager setup
+- Early-stage architecture decisions
+
+It serves as a baseline that highlights the evolution toward a more production-ready system.
+
+---
+
+## 📚 Learning Value
+
+Keeping this repository public helps illustrate:
+
+- Architectural evolution
+- Trade-offs between traditional and GitOps approaches
+- Practical progression toward better system design
+
+---
+
+## 👤 Author
+
+Maintained by Qays Alnajjad
+
+---
+
+## 📌 Final Note
+
+If you're reviewing this project:
+
+👉 Please refer to the newer repositories for the current and recommended implementation.
+
+This repository is intentionally preserved to show the transition from a basic setup to a **scalable, production-ready GitOps architecture
+
+
+
+
+
 # Kubernetes Monitoring with Prometheus & Alertmanager
 
 # ⚠️ Deprecated Repository
