@@ -110,6 +110,12 @@ If you're reviewing this project:
 
 This repository is intentionally preserved to show the transition from a basic setup to a **scalable, production-ready GitOps architecture**
 
+---
+
+# 📚 Legacy Documentation
+
+The content below is the original implementation and is kept for reference only.
+It does NOT represent the current recommended architecture.
 
 # Kubernetes Monitoring with Prometheus & Alertmanager
 
