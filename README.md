@@ -21,7 +21,9 @@ It is no longer maintained and has been replaced by a GitOps-based architecture 
 - Fully declarative GitOps workflow
 - Better scalability and maintainability
 - Easier team collaboration
-- 
+
+---
+
 ## Overview
 
 This project demonstrates a production-style monitoring setup for a Flask application running on Kubernetes (EKS) using:
