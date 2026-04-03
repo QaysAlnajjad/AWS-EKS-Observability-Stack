@@ -8,25 +8,31 @@ This repository represents an earlier implementation of an observability stack o
 
 ## 📌 Repository Status
 
-Deprecated — not recommended for use.
+# ⚠️ Deprecated Repository
 
-This repository is kept for historical and learning purposes only.
+This repository has been refactored into a more production-aligned architecture:
+
+### 🔄 New Structure
+
+- EKS Infrastructure Platform (Terraform & AWS)
+  https://github.com/QaysAlnajjad/EKS-Infrastructure-Platform-Terraform-AWS
+- EKS GitOps Platform (ArgoCD & Kubernetes Applications)
+  https://github.com/QaysAlnajjad/EKS-GitOps-Platform-ArgoCD-Kubernetes-Applications
+
+### 🎯 Reason for Refactor
+
+The original repository combined infrastructure provisioning and application deployment in a single codebase.
+
+This approach was improved by separating concerns into:
+
+- Infrastructure layer (Terraform)
+- GitOps delivery layer (ArgoCD)
+
+This reflects real-world platform engineering practices used in production environments.
 
 ---
 
-## ✅ Use These Repositories Instead
-
-- **Infrastructure:** https://github.com/QaysAlnajjad/eks-infrastructure
-- **GitOps Applications:** https://github.com/QaysAlnajjad/eks-gitops-apps
-
-These repositories contain the current and recommended implementation based on:
-
-- Terraform
-- ArgoCD
-- GitOps
-- separated infrastructure and application layers
-
----
+👉 Please refer to the new repositories for the latest implementation.
 
 ## 🔄 Why This Repo Was Replaced
 
