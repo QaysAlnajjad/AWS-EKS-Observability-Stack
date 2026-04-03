@@ -15,9 +15,9 @@ This repository has been refactored into a more production-aligned architecture:
 ### 🔄 New Structure
 
 - EKS Infrastructure Platform (Terraform & AWS)
-  https://github.com/QaysAlnajjad/EKS-Infrastructure-Platform-Terraform-AWS
-- EKS GitOps Platform (ArgoCD & Kubernetes Applications)
-  https://github.com/QaysAlnajjad/EKS-GitOps-Platform-ArgoCD-Kubernetes-Applications
+    - https://github.com/QaysAlnajjad/EKS-Infrastructure-Platform-Terraform-AWS
+- EKS GitOps Platform (ArgoCD on EKS)
+    - https://github.com/QaysAlnajjad/EKS-GitOps-Platform-ArgoCD-Kubernetes-Applications
 
 ### 🎯 Reason for Refactor
 
